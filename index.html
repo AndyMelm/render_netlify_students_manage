@@ -36,7 +36,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         function getStudents() {
-            axios.get('http://127.0.0.1:5000/student')
+            axios.get('https://students-render.onrender.com/student')
             .then(response => {
                 const students = response.data.students;
                 const studentTable = document.getElementById('student-table');
@@ -62,7 +62,7 @@
             const name = document.getElementById('name').value;
             const age = document.getElementById('age').value;
 
-            axios.post('http://127.0.0.1:5000/student', {
+            axios.post('https://students-render.onrender.com/student', {
                 name: name,
                 age: age
             })
@@ -76,7 +76,7 @@
         }
 
         function deleteStudent(id) {
-            axios.delete(`http://127.0.0.1:5000/student/${id}`)
+            axios.delete(`https://students-render.onrender.com/student/${id}`)
             .then(response => {
                 console.log(response.data);
                 getStudents();
@@ -88,7 +88,7 @@
             const name = prompt('Enter new name');
             const age = prompt('Enter new age');
 
-            axios.put(`http://127.0.0.1:5000/student/${id}`, {
+            axios.put(`https://students-render.onrender.com/student/${id}`, {
                 name: name,
                 age: age
             })
